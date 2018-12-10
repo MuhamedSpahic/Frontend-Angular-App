@@ -1,0 +1,22 @@
+.card-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+    border-radius: 3px;
+    border: 1px solid #dddddd;
+    box-shadow: 5px 15px 25px #dddddd; 
+}
+.card-wrapper:hover{
+    cursor: pointer;
+}
+.img{
+    //height: 190px;
+    //min-height: 75%;
+   // background-color: blue;
+}
+
+.title{
+   // height: 25%;
+   //background-color: red;
+}

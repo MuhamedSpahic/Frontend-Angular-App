@@ -1,0 +1,26 @@
+
+<div class="app-container">
+    <div class="toggle-container">
+        <div class="toggle"
+             [ngClass]="{'active': !isTvShows}"
+             (click)="onToggle()">Movies</div>
+        <div class="toggle" 
+             [ngClass]="{'active': isTvShows}"
+             (click)="onToggle()">TV Shows</div>
+    </div>
+    <input  class="form-control"
+            type="text"
+            placeholder="Search..." 
+            [(ngModel)]="search"
+    >
+<div *ngIf="!isTvShows" class="cards-containter">
+    <div  class="card" *ngFor="let movie of movies | filter:'original_title': search ">
+        <app-card class="" [title]="movie.original_title" [image]="movie.backdrop_path" [lista]="movies" (cardClicked)="getDetail(movie.id)"></app-card>
+    </div>
+</div>
+<div *ngIf="isTvShows" class="cards-containter">
+    <div class="card" *ngFor="let show of tvshows | filter:'original_name': search ">
+        <app-card class="" [title]="show.original_name" [image]="show.backdrop_path" [lista]="tvshows" (cardClicked)="getDetail(show.id)"></app-card>
+    </div>
+</div>
+</div>

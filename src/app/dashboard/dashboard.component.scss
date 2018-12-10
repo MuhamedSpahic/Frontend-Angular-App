@@ -1,0 +1,44 @@
+.cards-containter{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+   // width: 502px;
+    margin: 10px;
+}
+
+.toggle{
+background-color: white;
+color: #5fb6c5;
+justify-content: center;
+display: flex;
+width: 50%;
+align-items: center;
+}
+
+.toggle:hover{
+background-color: #5fb6c5;
+color: white;
+cursor: pointer;
+}
+.active{
+background-color: #5fb6c5;
+color: white;
+}
+.toggle-container{
+    display: flex;
+    border: 1px solid #5fb6c5;
+    border-radius: 2px;
+    width: 200px;
+    justify-content: center;
+    height: 40px;
+}
+.app-container{
+    display: flex;
+    flex-direction: column;
+    padding: 55px;
+}
+input{
+    margin-top: 20px
+}

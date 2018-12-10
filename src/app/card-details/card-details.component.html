@@ -1,0 +1,16 @@
+<div class="p-55">
+  <button class=" btn btn-back mb-20" (click)="back()">Back</button>
+  <div class="img mt-20 mb-20">
+    <img *ngIf="!hasVideo" src="{{image}}">
+    <div *ngIf="hasVideo" class="img mt-20 mb-20">
+    <youtube-player
+        [videoId]="video"
+        (ready)="savePlayer($event)"
+        (change)="onStateChange($event)"
+      ></youtube-player>
+    </div>
+  </div>
+  <h1>{{title}}</h1>
+  <div>{{overviewHeader}}:</div>
+  <span>{{overview}}</span>
+</div>
