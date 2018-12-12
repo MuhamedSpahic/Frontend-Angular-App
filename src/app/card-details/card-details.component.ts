@@ -27,7 +27,7 @@ export class CardDetailsComponent implements OnInit {
           this.title = movie.original_title;
           this.overview = movie.overview;
           this.service.getMovieTrailer(id).subscribe(
-            trailer => {
+            (trailer: any) => {
             if (trailer['results'].length > 0) {
               this.hasVideo = true;
               this.video = trailer.results[0].key;
@@ -43,7 +43,7 @@ export class CardDetailsComponent implements OnInit {
           this.overviewHeader = 'TV Show Overview';
           this.title = show.original_name;
           this.overview = show.overview;
-          this.service.getShowTrailer(id).subscribe( trailer => {
+          this.service.getShowTrailer(id).subscribe( (trailer: any) => {
             if (trailer['results'].length > 0)  {
               this.hasVideo = true;
               this.video = trailer.results[0].key;
