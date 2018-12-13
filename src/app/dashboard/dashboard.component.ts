@@ -71,13 +71,10 @@ export class DashboardComponent implements OnInit {
             this.isTopRated = false;
           }
         );
-    } else {
-      this.isTvShows = this.service.isTvShows();
-      if (this.isTvShows) {
-        this.getShows();
-      } else {
-        this.getMovies();
-      }
+    }
+    if (item.length < 3 && !this.isTopRated) {
+      // return again top rated movies/shows
+      this.isTvShows ? this.getShows() : this.getMovies();
     }
   }
 }
