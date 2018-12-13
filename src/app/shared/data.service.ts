@@ -29,6 +29,10 @@ export class DataService {
     getShowTrailer(id) {
         return this.http.get(`https://api.themoviedb.org/3/tv/${id}/videos?api_key=a3b38d1ecc1f27affe5c4cd266780a64&language=en-US`);
     }
+    search(query: string, type: string): Observable<any> {
+        // tslint:disable-next-line:max-line-length
+        return this.http.get(`https://api.themoviedb.org/3/search/${type}?api_key=a3b38d1ecc1f27affe5c4cd266780a64&language=en-US&page=1&include_adult=false&query=${query}`);
+    }
     // getMovieList() {
     //     return this.movies;
     // }

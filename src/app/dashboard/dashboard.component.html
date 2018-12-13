@@ -12,6 +12,7 @@
             type="text"
             placeholder="Search..." 
             [(ngModel)]="search"
+            (ngModelChange)="searchItem(search)"
     >
 <div *ngIf="!isTvShows" class="cards-containter">
     <div  class="card" *ngFor="let movie of movies | filter:'original_title': search ">
@@ -19,7 +20,7 @@
     </div>
 </div>
 <div *ngIf="isTvShows" class="cards-containter">
-    <div class="card" *ngFor="let show of tvshows | filter:'original_name': search ">
+    <div class="card" *ngFor="let show of tvshows">
         <app-card class="" [title]="show.original_name" [image]="show.backdrop_path" [lista]="tvshows" (cardClicked)="getDetail(show.id)"></app-card>
     </div>
 </div>
